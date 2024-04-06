@@ -57,3 +57,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  _______,  _______,  _______,  _______,  _______,  BAT_LVL,  NK_TOGG,  _______,  _______,  _______,  _______,            _______,            _______,
         _______,  _______,  _______,                                _______,                                _______,  _______,  _______,  _______,  _______,  _______,  _______)
 };
+
+
+const key_override_t mac_pipe_key_override = ko_make_with_layers(MOD_MASK_ALT, KC_NUBS, ROPT(KC_7), (1<<MAC_BASE));
+const key_override_t mac_left_curly_brace_key_override = ko_make_with_layers(MOD_MASK_ALT, KC_7, ROPT(KC_8), (1<<MAC_BASE));
+const key_override_t mac_right_curly_brace_key_override = ko_make_with_layers(MOD_MASK_ALT, KC_0, ROPT(KC_9), (1<<MAC_BASE));
+const key_override_t mac_left_bracket_key_override = ko_make_with_layers(MOD_MASK_ALT, KC_8, ROPT(KC_5), (1<<MAC_BASE));
+const key_override_t mac_right_bracket_key_override = ko_make_with_layers(MOD_MASK_ALT, KC_9, ROPT(KC_6), (1<<MAC_BASE));
+const key_override_t mac_backslash_key_override = ko_make_with_layers(MOD_MASK_ALT, KC_MINS, RSA(KC_7), (1<<MAC_BASE));
+
+// This globally defines all key overrides to be used
+const key_override_t **key_overrides = (const key_override_t *[]){
+    &mac_pipe_key_override,
+    &mac_left_curly_brace_key_override,
+    &mac_right_curly_brace_key_override,
+    &mac_left_bracket_key_override,
+    &mac_right_bracket_key_override,
+    &mac_backslash_key_override,
+    NULL // Null terminate the array of overrides!
+};
